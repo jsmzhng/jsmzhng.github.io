@@ -1,0 +1,110 @@
+/* CSS Variables for theming */
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --link-color: #00f;
+  --border-color: #ddd;
+  --code-bg: #f5f5f5;
+  --separator-color: #ccc;
+  --count-color: #999;
+  --footer-color: #666;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --link-color: #4db8ff;
+  --border-color: #444;
+  --code-bg: #2a2a2a;
+  --separator-color: #666;
+  --count-color: #888;
+  --footer-color: #999;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main, article {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+pre, code {
+  background-color: var(--code-bg);
+  color: var(--text-color);
+}
+
+/* Override any hardcoded white backgrounds */
+[data-theme="dark"] main,
+[data-theme="dark"] article,
+[data-theme="dark"] .content {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Override theme-specific styles */
+[data-theme="dark"] .article-meta {
+  background: transparent !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] blockquote {
+  background: var(--code-bg) !important;
+  border-left-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] pre {
+  border-color: var(--border-color) !important;
+  box-shadow: none !important;
+}
+
+.menu li:not(:last-child)::after {
+  color: var(--separator-color);
+}
+
+.count {
+  color: var(--count-color);
+}
+
+footer, footer p {
+  color: var(--footer-color);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 0.2em 0.5em;
+  transition: opacity 0.2s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+}
+
+/* Hide/show icons based on theme */
+[data-theme="light"] .moon-icon {
+  display: inline;
+}
+
+[data-theme="light"] .sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+  display: inline;
+}
