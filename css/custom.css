@@ -41,10 +41,19 @@
 .menu {
   text-align: right;
   margin: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Ensure slash separator shows */
 .menu li:not(:last-child)::after {
+  content: " / ";
+  color: #ccc;
+  margin: 0 8px;
+}
+
+/* Add slash after last menu item before theme toggle */
+.menu li:last-child::after {
   content: " / ";
   color: #ccc;
   margin: 0 8px;
