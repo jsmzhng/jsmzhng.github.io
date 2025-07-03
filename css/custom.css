@@ -1,0 +1,122 @@
+/* Override menu styling */
+.menu a {
+  background: none !important;
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover effect */
+.menu a:hover {
+  opacity: 0.7;
+}
+
+/* Active page underline */
+.menu a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: currentColor;
+}
+
+/* Navigation container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.site-name {
+  font-size: 1.1em;
+}
+
+/* Menu alignment */
+.menu {
+  text-align: right;
+  margin: 0;
+}
+
+/* Ensure slash separator shows */
+.menu li:not(:last-child)::after {
+  content: " / ";
+  color: #ccc;
+  margin: 0 8px;
+}
+
+/* Taxonomy section */
+.taxonomy-section {
+  display: flex;
+  gap: 4em;
+  margin: 2em 0;
+}
+
+.taxonomy-group {
+  flex: 1;
+}
+
+.taxonomy-group h2 {
+  margin: 0 0 0.8em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.taxonomy-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.taxonomy-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+}
+
+.taxonomy-item a {
+  /* Use default link color */
+}
+
+.taxonomy-item a:hover {
+  text-decoration: underline;
+}
+
+.count {
+  color: #999;
+  font-size: 0.9em;
+  margin-left: 0.3em;
+}
+
+/* All posts section */
+.all-posts-section {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.all-posts-section h2 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+  color: #666;
+  font-size: 0.85em;
+}
+
+footer p {
+  color: #666;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+footer a {
+  font-size: inherit;
+}
